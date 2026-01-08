@@ -1,3 +1,4 @@
+//Example of switch case
 import java.util.Scanner;
 public class CaseExample {
 	public static void main(String[] args) {
@@ -12,3 +13,5 @@ public class CaseExample {
 
     }
 }
+//output:2 -sweet apple
+
