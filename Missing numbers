@@ -1,0 +1,37 @@
+//Finding the missing number in array arr{4,3,2,7,8,2,3,1}
+//Tip:when array given [1...N]then Index=value-1;
+//Tip:when array given [0....N]Index=value;
+import java.util.ArrayList;
+import java.util.Arrays;
+class Missingnum{
+    public static void main(String[]args){
+        System.out.println("Finding Missing Numbers");
+        int[] arr={4,3,2,7,8,2,3,1};
+        ArrayList<Integer> res =missingnumber(arr);
+        System.out.println(res.toString());
+    }
+    static ArrayList<Integer>missingnumber(int[]arr){
+        int i=0;
+        while(i<arr.length){
+            int correct=arr[i]-1;
+            if(arr[i]!=arr[correct]){
+               swap(arr,i,correct);
+            }else{
+                i++;
+            }
+        }
+        //just finding the missing number
+     ArrayList<Integer> ans = new ArrayList<>();
+     for(int index=0;index<arr.length;index++){
+         if(arr[index]!=index+1){
+            ans.add(index+1);
+         }
+     }
+     return ans;
+    }
+    static void swap(int[]arr,int first,int secoend){
+        int temp=arr[first];
+        arr[first]=arr[secoend];
+        arr[secoend]=temp;
+    }
+}
